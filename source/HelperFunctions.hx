@@ -20,14 +20,14 @@ class HelperFunctions
 
 		switch (song)
 		{
-		case 'Cheer-up':
+		case 'Cheer-Up':
 				artistPrefix = 'J.K';
-			case 'Feeling-better':
+			case 'Feeling-Better':
 				artistPrefix = 'J.K';
 			case 'Joyful':
 				artistPrefix = 'J.K';	
 			default:
-				artistPrefix = 'Kawai Sprite';
+				artistPrefix = 'J.K';
 		}	
 
 		return artistPrefix;
