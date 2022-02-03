@@ -182,18 +182,12 @@ class FreeplayState extends MusicBeatState
 			iconArray.push(icon);
 			icon.animation.play('normalLooped', true);
 			add(icon);
-
-			// songText.x += 40;
-			// DONT PUT X IN THE FIRST PARAMETER OF new ALPHABET() !!
-			// songText.screenCenter(X);
 		}
 
 		scoreText = new FlxText(FlxG.width * 0.7, 5, 0, "", 32);
-		// scoreText.autoSize = false;
 		scoreText.setFormat(Paths.font("vcr.ttf"), 32, FlxColor.WHITE, RIGHT);
-		// scoreText.alignment = RIGHT;
 
-		var scoreBG:FlxSprite = new FlxSprite(scoreText.x - 6, 0).makeGraphic(Std.int(FlxG.width * 0.35), 135, 0xFF000000);
+		var scoreBG:FlxSprite = new FlxSprite(scoreText.x - 6, 0).makeGraphic(Std.int(FlxG.width * 0.35), 75, 0xFF000000);
 		scoreBG.alpha = 0.6;
 		add(scoreBG);
 
@@ -205,10 +199,6 @@ class FreeplayState extends MusicBeatState
 		diffCalcText.font = scoreText.font;
 		add(diffCalcText);
 
-		previewtext = new FlxText(scoreText.x, scoreText.y + 94, 0, "Rate: " + rate + "x", 24);
-		previewtext.font = scoreText.font;
-		add(previewtext);
-
 		comboText = new FlxText(diffText.x + 100, diffText.y, 0, "", 24);
 		comboText.font = diffText.font;
 		add(comboText);
@@ -218,13 +208,10 @@ class FreeplayState extends MusicBeatState
 		changeSelection();
 		changeDiff();
 
-		// FlxG.sound.playMusic(Paths.music('title'), 0);
-		// FlxG.sound.music.fadeIn(2, 0, 0.8);
 		selector = new FlxText();
 
 		selector.size = 40;
 		selector.text = ">";
-		// add(selector);
 
 		camZoom = FlxTween.tween(this, {}, 0);
 
@@ -305,10 +292,7 @@ class FreeplayState extends MusicBeatState
 			changeSelection(1);
 		}
 
-		//if (FlxG.keys.justPressed.SPACE && !openedPreview)
-			//openSubState(new DiffOverview());
-
-		if (FlxG.keys.pressed.SHIFT)
+		/* if (FlxG.keys.pressed.SHIFT)
 		{
 			if (FlxG.keys.justPressed.LEFT)
 			{
@@ -333,7 +317,8 @@ class FreeplayState extends MusicBeatState
 			}
 
 			previewtext.text = "Rate: " + rate + "x";
-		}
+		} */
+
 		else
 		{
 			if (FlxG.keys.justPressed.LEFT)
@@ -446,7 +431,6 @@ class FreeplayState extends MusicBeatState
 		intendedScore = Highscore.getScore(songHighscore, curDifficulty);
 		combo = Highscore.getCombo(songHighscore, curDifficulty);
 		#end
-		diffCalcText.text = 'RATING: ${DiffCalc.CalculateDiff(songData.get(songs[curSelected].songName)[curDifficulty])}';
 		diffText.text = CoolUtil.difficultyFromInt(curDifficulty).toUpperCase();
 	}
 
@@ -517,7 +501,6 @@ class FreeplayState extends MusicBeatState
 		// lerpScore = 0;
 		#end
 
-		diffCalcText.text = 'RATING: ${DiffCalc.CalculateDiff(songData.get(songs[curSelected].songName)[curDifficulty])}';
 		diffText.text = CoolUtil.difficultyFromInt(curDifficulty).toUpperCase();
 		
 		FlxG.sound.playMusic(Paths.inst(songs[curSelected].songName), 0.8);

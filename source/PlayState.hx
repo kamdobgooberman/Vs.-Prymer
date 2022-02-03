@@ -4759,78 +4759,76 @@ class PlayState extends MusicBeatState
 	var bfPos:Array<Float> = [0, 0];
 
 	function triggerCamMovement(num:Float = 0)
-		{
-			camMovement.cancel();
+	{
+		camMovement.cancel();
 
-			if (camFocus == 'bf')
+		if (camFocus == 'bf')
+		{
+			switch (num)
 			{
-				switch (num)
-				{
-					case 2:
-						camMovement = FlxTween.tween(camFollow, {y: bfPos[1] - daFunneOffsetMultiplier, x: bfPos[0]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
-					case 3:
-						camMovement = FlxTween.tween(camFollow, {x: bfPos[0] + daFunneOffsetMultiplier, y: bfPos[1]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
-					case 1:
-						camMovement = FlxTween.tween(camFollow, {y: bfPos[1] + daFunneOffsetMultiplier, x: bfPos[0]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
-					case 0:
-						camMovement = FlxTween.tween(camFollow, {x: bfPos[0] - daFunneOffsetMultiplier, y: bfPos[1]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
-				}
-			}
-			else
-			{
-				switch (num)
-				{
-					case 2:
-						camMovement = FlxTween.tween(camFollow, {y: dadPos[1] - daFunneOffsetMultiplier, x: dadPos[0]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
-					case 3:
-						camMovement = FlxTween.tween(camFollow, {x: dadPos[0] + daFunneOffsetMultiplier, y: dadPos[1]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
-					case 1:
-						camMovement = FlxTween.tween(camFollow, {y: dadPos[1] + daFunneOffsetMultiplier, x: dadPos[0]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
-					case 0:
-						camMovement = FlxTween.tween(camFollow, {x: dadPos[0] - daFunneOffsetMultiplier, y: dadPos[1]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
-				}
+				case 2:
+					camMovement = FlxTween.tween(camFollow, {y: bfPos[1] - daFunneOffsetMultiplier, x: bfPos[0]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
+				case 3:
+					camMovement = FlxTween.tween(camFollow, {x: bfPos[0] + daFunneOffsetMultiplier, y: bfPos[1]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
+				case 1:
+					camMovement = FlxTween.tween(camFollow, {y: bfPos[1] + daFunneOffsetMultiplier, x: bfPos[0]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
+				case 0:
+					camMovement = FlxTween.tween(camFollow, {x: bfPos[0] - daFunneOffsetMultiplier, y: bfPos[1]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
 			}
 		}
-
-		function checkFocus()
+		else
 		{
-			if (generatedMusic && PlayState.SONG.notes[Std.int(curStep / 16)] != null)
+			switch (num)
 			{
+				case 2:
+					camMovement = FlxTween.tween(camFollow, {y: dadPos[1] - daFunneOffsetMultiplier, x: dadPos[0]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
+				case 3:
+					camMovement = FlxTween.tween(camFollow, {x: dadPos[0] + daFunneOffsetMultiplier, y: dadPos[1]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
+				case 1:
+					camMovement = FlxTween.tween(camFollow, {y: dadPos[1] + daFunneOffsetMultiplier, x: dadPos[0]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
+				case 0:
+					camMovement = FlxTween.tween(camFollow, {x: dadPos[0] - daFunneOffsetMultiplier, y: dadPos[1]}, Conductor.crochet / 10000, {ease: FlxEase.circIn});
+			}
+		}
+	}
+
+	function checkFocus()
+	{
+		if (generatedMusic && PlayState.SONG.notes[Std.int(curStep / 16)] != null)
+		{
+			if (luaModchart != null)
+				luaModchart.setVar("mustHit",PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection);
+
+			if (camFocus != "dad" && !PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection)
+			{
+				camMovement.cancel();
+				camFocus = 'dad';
+
+				camMovement = FlxTween.tween(camFollow, {x: dadPos[0], y: dadPos[1]}, camLerp, {ease: FlxEase.quintOut});
+
 				if (luaModchart != null)
-					luaModchart.setVar("mustHit",PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection);
-	
-				if (camFocus != "dad" && !PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection)
-				{
-					camMovement.cancel();
-					camFocus = 'dad';
-	
-					camMovement = FlxTween.tween(camFollow, {x: dadPos[0], y: dadPos[1]}, camLerp, {ease: FlxEase.quintOut});
-	
-					if (luaModchart != null)
-						luaModchart.executeState('playerTwoTurn', []);
-				}
-				if (camFocus != "bf" && PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection)
-				{
-					camMovement.cancel();
-					camFocus = 'bf';
-	
-					camMovement = FlxTween.tween(camFollow, {x: bfPos[0], y: bfPos[1]}, camLerp, {ease: FlxEase.quintOut});
-	
-					if (luaModchart != null)
-						luaModchart.executeState('playerOneTurn', []);
-				}
-	
+					luaModchart.executeState('playerTwoTurn', []);
 			}
-		}
-		
-		function getCamOffsets()
-		{
+			if (camFocus != "bf" && PlayState.SONG.notes[Std.int(curStep / 16)].mustHitSection)
+			{
+				camMovement.cancel();
+				camFocus = 'bf';
 
-			dadPos[0] = dad.getMidpoint().x + 170;
-			dadPos[1] = dad.getMidpoint().y + 75;
-		
-		
-			bfPos[0] = dad.getMidpoint().x + 300;
-			bfPos[1] = dad.getMidpoint().y + 135;
+				camMovement = FlxTween.tween(camFollow, {x: bfPos[0], y: bfPos[1]}, camLerp, {ease: FlxEase.quintOut});
+
+				if (luaModchart != null)
+					luaModchart.executeState('playerOneTurn', []);
+			}
+	
 		}
+	}
+		
+	function getCamOffsets() // Someone fix these offsets pls, bc I don't like fixing offsets :(
+	{
+		dadPos[0] = dad.getMidpoint().x + 170;
+		dadPos[1] = dad.getMidpoint().y + 75;
+
+		bfPos[0] = dad.getMidpoint().x + 300;
+		bfPos[1] = dad.getMidpoint().y + 135;
+	}
 }
