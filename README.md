@@ -1,20 +1,3 @@
- __                 /                                  
-/ _   _ |_ |_ .  _                                     
-\__) (- |_ |_ | | )                                    
-                                                       
- __                                                    
-|_   _  _  _  |                                        
-|   |  (- (_| |( \/                                    
-                 /                                     
-                                                       
- _   _     _                                           
-(_) | )   (_|                                          
-                                                       
- __                                                    
-|_   _ .  _|  _        _  .  _  |_  |_       _  _  |_  
-|   |  | (_| (_| \/   | ) | (_) | ) |_   \/ (- (_| | ) 
-                 /          _/           /             
-
 HEY
 Thanks for downloadin Friday Night FUNKIN'
 If you downloaded this from any other place than ninja-muffin24.itch.io/FUNKIN
