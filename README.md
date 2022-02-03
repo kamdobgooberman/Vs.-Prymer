@@ -24,9 +24,9 @@ Support on Itch.io - https://ninja-muffin24.itch.io/funkin
 If not no biggie we don't fully hate you only kinda no biggie.
 
 
-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
     INFO AND LINKS
-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 If you wanna dig around, the game is fully open source on Github
 https://github.com/ninjamuffin99/Funkin
@@ -37,9 +37,9 @@ MUSIC IS ON SPOTIFY AND BANDCAMP AND EVERYWHERE ELSE PROB TOO
 https://kawaisprite.bandcamp.com/album/friday-night-funkin-ost-vol-1
 
 
-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
     FINAL WORDS / CREDITS
-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
+#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#
 
 Friday Night Funkin' is made by ninjamuffin99 (programmer), PhantomArcade (animator), kawaisprite (musician), and evilsk8r (artist)
 
@@ -58,18 +58,3 @@ Go to newgrounds, we love newgrounds. newgrounds good. How many times do I gotta
 I love Tom Fulp.
 
 - Cameron ♪(´▽｀)
-
-##################################################################################
-                                                                                  
- _   _   _____   _      _    ____   ____     ___    _   _   _   _   ____    ____  
-| \ | | | ____| | |    | |  / ___| |  _ \   / _ \  | | | | | \ | | |  _ \  / ___| 
-|  \| | |  _|   | | /\ | | | |  _  | |_) | | | | | | | | | |  \| | | | | | \___ \ 
-| |\  | | |___   \ V  V /  | |_| | |  _ <  | |_| | | |_| | | |\  | | |_| |  ___) |
-|_| \_| |_____|   \_/\_/    \____| |_| \_\  \___/   \___/  |_| \_| |____/  |____/ 
- _       _  _     ___    ___       __              _       _  _       _        _  
-|_ |  | |_ |_) \_/ | |_|  |  |\ | /__     |_      |_ |  | |_ |_) \_/ / \ |\ | |_  
-|_  \/  |_ | \  |  | | | _|_ | \| \_| o   |_)\/   |_  \/  |_ | \  |  \_/ | \| |_ o
-                                      /      /                                    
-                                                                                  
-##################################################################################
-i stole this from stamper.
