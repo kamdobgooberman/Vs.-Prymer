@@ -65,7 +65,7 @@ import flixel.tweens.FlxTween;
 import flixel.ui.FlxBar;
 import flixel.util.FlxCollision; 
 import flixel.util.FlxColor;
-import flixel.util.FlxSort;   // Line 69 funny number hahahahhahaha
+import flixel.util.FlxSort;
 import flixel.util.FlxStringUtil;
 import flixel.util.FlxTimer;
 import haxe.Json;
