@@ -4177,7 +4177,7 @@ class PlayState extends MusicBeatState
 			}
 	}
 
-	var camLerp:Float = 0.4; // Everything passed this point is BrightFrye's code. So credits to him!
+	var camLerp:Float = 0.4;
 	var camFocus:String = "";
 	var camMovement:FlxTween;
 	var daFunneOffsetMultiplier:Float = 20;
